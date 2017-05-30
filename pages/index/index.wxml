@@ -10,31 +10,31 @@
   </swiper>-->
   <view class="h2">品牌推荐</view>
   <view class="picture-flow">
-    <block wx:for="{{recommendedUrls}}">
+    <block wx:for="{{recommendedUrls}}" wx:key="*this">
       <image src="{{item}}"></image>
     </block>
   </view>
   <view class="h2">热销产品</view>
   <view class="picture-flow">
-    <block wx:for="{{recommendedUrls}}">
+    <block wx:for="{{recommendedUrls}}" wx:key="*this">
       <image src="{{item}}"></image>
     </block>
   </view>
   <view class="h2">热销产品</view>
   <view class="picture-flow">
-    <block wx:for="{{recommendedUrls}}">
+    <block wx:for="{{recommendedUrls}}" wx:key="*this">
       <image src="{{item}}"></image>
     </block>
   </view>
   <view class="h2">热销产品</view>
   <view class="picture-flow">
-    <block wx:for="{{recommendedUrls}}">
+    <block wx:for="{{recommendedUrls}}" wx:key="*this">
       <image src="{{item}}"></image>
     </block>
   </view>
   <view class="h2">热销产品</view>
   <view class="picture-flow">
-    <block wx:for="{{recommendedUrls}}">
+    <block wx:for="{{recommendedUrls}}" wx:key="*this">
       <image src="{{item}}"></image>
     </block>
   </view>
