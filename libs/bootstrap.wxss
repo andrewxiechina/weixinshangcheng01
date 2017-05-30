@@ -29,7 +29,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200 rpx;
+  height: 200rpx;
+}
+/* Line Component */
+.line {
+  border-bottom: 1px #999999 solid;
+  width: 100%;
 }
 
 /* User Pannel Component */
@@ -53,11 +58,58 @@
   z-index: 0;
 }
 
-/* Line Component */
-.line {
-  border-bottom: 1px #999999 solid;
-  width: 100%;
+/* Matrix Component */
+.matrix-flow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  width: 400rpx;
+  align-self: center;
 }
+.matrix-flow-tile {
+  display: flex;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx;
+  color: white;
+  font-size: 30rpx;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Colors */
+.b-green {
+  background-color: green;
+}
+.b-red {
+  background-color: red;
+}
+.b-yellow {
+  background-color: palegoldenrod;
+}
+.b-orange {
+  background-color: darkorange;
+}
+.b-pink {
+  background-color: lightpink;
+}
+.b-blue {
+  background-color: cornflowerblue;
+}
+.b-purple {
+  background-color: mediumpurple;
+}
+.b-lightblue {
+  background-color: lightskyblue;
+}
+.b-grey {
+  background-color: lightgrey;
+}
+
+
 
 .h1, .h2, .h3, .h4 {
   font-size: 30rpx;

@@ -6,4 +6,14 @@
       <image src="{{userInfo.avatarUrl}}" class="avatar"></image>      
     </view>
   </view>
+
+  <view class="moto">{{userInfo.nickName}}要{{current!==null ? category[current].description : "（选择你要做的）"}}</view>
+
+  <view class="matrix-flow">
+    <block wx:for="{{category}}">
+      <view class="matrix-flow-tile b-{{item.color}}" bindtap="start" type="primary"><text>{{item.id}}</text></view>
+    </block>
+  </view>
+
+  
 </view>
