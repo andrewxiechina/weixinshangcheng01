@@ -15,24 +15,4 @@ Page({
       'http://image.huanqiuxiaozhen.com/%E4%B8%BB%E9%A2%98%E9%A6%86%E5%9B%BE/2017_5_16_1494918103781'
     ]
   },
-  changeIndicatorDots: function (e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-  changeAutoplay: function (e) {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
-    })
-  }
 })
