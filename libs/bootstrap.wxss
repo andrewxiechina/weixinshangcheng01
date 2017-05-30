@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Swiper Component */
 .swiper {
   width: 750rpx;
   height: 400rpx;
@@ -10,6 +12,7 @@
   width: 100%;
 }
 
+/* Picture Flow Component*/
 .picture-flow {
   display: flex;
   flex-direction: row;
@@ -22,7 +25,39 @@
   height: 170rpx;
   margin: 13rpx;
 }
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200 rpx;
+}
 
+/* User Pannel Component */
+.user-pannel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.user-pannel .avatar {
+  border-radius: 50%;
+  height: 100rpx;
+  width: 100rpx;
+  border: 10px solid white;
+  z-index: 1;
+}
+.user-pannel .line {
+  position: relative;
+  bottom: -80rpx;
+  z-index: 0;
+}
+
+/* Line Component */
+.line {
+  border-bottom: 1px #999999 solid;
+  width: 100%;
+}
 
 .h1, .h2, .h3, .h4 {
   font-size: 30rpx;
