@@ -1,10 +1,23 @@
 <!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="app">
+  <swiper class="swiper" indicator-dots="true"
+    autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="h2">品牌推荐</view>
+  <view class="picture-flow">
+    <block wx:for="{{recommendedUrls}}">
+      <image src="{{item}}"></image>
+    </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="h2">热销产品</view>
+  <view class="picture-flow">
+    <block wx:for="{{recommendedUrls}}">
+      <image src="{{item}}"></image>
+    </block>
   </view>
 </view>

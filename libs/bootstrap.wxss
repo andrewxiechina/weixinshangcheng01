@@ -1,0 +1,41 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+.swiper {
+  width: 750rpx;
+  height: 400rpx;
+}
+.swiper image {
+  width: 100%;
+}
+
+.picture-flow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
+}
+.picture-flow image {
+  width: 350rpx;
+  height: 170rpx;
+  margin: 13rpx;
+}
+
+
+.h1, .h2, .h3, .h4 {
+  font-size: 30rpx;
+  padding: 15rpx;
+  font-family: serif;
+  font-weight: bold;
+}
+.h1 {
+  font-size: 60rpx;
+}
+.h2 {
+  font-size: 40rpx;
+}
+.f-1 {
+  flex: 1;
+}
