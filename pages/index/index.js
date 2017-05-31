@@ -12,6 +12,7 @@ Page({
     current: null,
     isScreenFacingDown: false,
     isTimerStarted: false,
+    log: [],
     category: [
       {
         id: "学",
@@ -67,6 +68,15 @@ Page({
         userInfo: data
       });
     });
+
+    wx.getStorage({
+      key: 'log',
+      success: function (res) {
+        that.setData({
+          log: res.data
+        })
+      }
+    })
   },
   handleTap: function(e){
     var that = this;
@@ -98,7 +108,8 @@ Page({
     var that = this;
     if (!this.data.isTimerStarted){
       this.setData({
-        isTimerStarted: true
+        isTimerStarted: true,
+        startTime: new Date()
       })
       this.timer = setInterval(function () {
         that.setData({
@@ -117,27 +128,44 @@ Page({
     }     
   },
   updateTimeStr: function() {
+    var timeStr = this.parseTimeStr(this.data.time);
+    this.setData({
+      timeStr: timeStr
+    });
+  },
+  parseTimeStr: function(t) {
     var t = this.data.time;
     var hour, minute, second = 0;
-    var addDigit = function(n){
+    var addDigit = function (n) {
       if (n < 10) {
         return "0" + n;
-      }else{
+      } else {
         return "" + n;
       }
     }
-    var hour = addDigit(Math.floor(t /3600));
-    var minute = addDigit(Math.floor(t%3600/60));
-    var second = addDigit(t - 3600*hour - 60*minute);
-    this.setData({
-      timeStr: "" + hour + ":" + minute + ":" + second
-    });
+    var hour = addDigit(Math.floor(t / 3600));
+    var minute = addDigit(Math.floor(t % 3600 / 60));
+    var second = addDigit(t - 3600 * hour - 60 * minute);
+    return "" + hour + ":" + minute + ":" + second;
   },
   stopTimer: function() {
-    console.log("flag");
+    this.setData({
+      log: [...this.data.log, {
+        category: this.data.current,
+        duration: this.data.time,
+        startTime: this.data.startTime,
+        endTime: new Date()
+      }]
+    });
+    // 存储数据
+    try {
+      wx.setStorageSync('log', this.data.log)
+    } catch (e) {
+    }
     wx.stopAccelerometer();
     this.pauseTimer();
 
+    // 参数还原
     this.setData({
       isTimerStarted: false,
       isScreenFacingDown: false,
@@ -146,6 +174,8 @@ Page({
       timer: null,
       current: null,
     });
+
+    
   }
   
 

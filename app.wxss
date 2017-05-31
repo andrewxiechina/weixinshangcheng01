@@ -21,3 +21,6 @@
   margin-bottom: 30rpx;
   color: darkgrey;
 }
+.timer .instruction {
+  text-align: center;
+}

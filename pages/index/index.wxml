@@ -1,9 +1,8 @@
 <!--index.wxml-->
 <view class="app">
   <view class="header">
-    <view class="user-pannel">
-      
-      <image src="{{userInfo.avatarUrl}}" class="avatar"></image> <view class="line" />     
+    <view class="user-pannel">      
+      <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
     </view>
   </view>
 
@@ -18,9 +17,14 @@
   <view wx:if="{{current!==null}}" class="timer">
     <view class="time">{{timeStr}}</view>
     <block wx:if="{{!isScreenFacingDown}}">
-      <view class="instruction">Please face the screen down to start the timer.</view>
+      <view class="instruction">30秒内将手机屏幕朝下放置，可以开启计时器。</view>
     </block>
     <button bindtap="stopTimer">Stop</button>
   </view>
 
+  <view class="log">
+    <block wx:for="{{log}}" wx:key="*this">
+      <view>{{category[item.category].id}}: {{item.duration}}</view>
+    </block>
+  </view>
 </view>
