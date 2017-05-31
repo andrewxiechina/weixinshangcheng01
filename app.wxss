@@ -7,4 +7,17 @@
   align-self: center;
   line-height: 50rpx;
   margin-bottom: 30rpx;
+  height: 150rpx;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.timer .time {
+  text-align: center;
+  font-size: 80rpx;
+  margin-bottom: 30rpx;
+  color: darkgrey;
 }

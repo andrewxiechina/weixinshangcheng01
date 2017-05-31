@@ -2,18 +2,25 @@
 <view class="app">
   <view class="header">
     <view class="user-pannel">
-      <view class="line" />
-      <image src="{{userInfo.avatarUrl}}" class="avatar"></image>      
+      
+      <image src="{{userInfo.avatarUrl}}" class="avatar"></image> <view class="line" />     
     </view>
   </view>
 
   <view class="moto">{{userInfo.nickName}}要{{current!==null ? category[current].description : "（选择你要做的）"}}</view>
 
-  <view class="matrix-flow">
-    <block wx:for="{{category}}">
-      <view class="matrix-flow-tile b-{{item.color}}" bindtap="start" type="primary"><text>{{item.id}}</text></view>
+  <view class="matrix-flow" wx:if="{{current===null}}">
+    <block wx:for="{{category}}" wx:key="{{item.id}}">
+      <view class="matrix-flow-tile b-{{item.color}}" bindtap="start" type="primary" data-index="{{index}}" bindtap="handleTap"><text data-index="{{index}}">{{item.id}}</text></view>
     </block>
   </view>
-
   
+  <view wx:if="{{current!==null}}" class="timer">
+    <view class="time">{{timeStr}}</view>
+    <block wx:if="{{!isScreenFacingDown}}">
+      <view class="instruction">Please face the screen down to start the timer.</view>
+    </block>
+    <button bindtap="stopTimer">Stop</button>
+  </view>
+
 </view>
