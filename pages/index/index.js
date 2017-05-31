@@ -3,9 +3,6 @@ var app = getApp();
 Page({
   data: {
     userInfo: {},
-    x: 0,
-    y: 0,
-    z: 0,
     time: 0,
     timeStr: "00:00:00",
     timer: null,

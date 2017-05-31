@@ -23,8 +23,9 @@
   </view>
 
   <view class="log">
-    <block wx:for="{{log}}" wx:key="*this">
-      <view>{{category[item.category].id}}: {{item.duration}}</view>
+    <view class="h2">学习记录</view>
+    <block wx:for="{{log}}" wx:key="*this">      
+      <view class="log-row">{{category[item.category].id}}: {{item.duration}}</view>
     </block>
   </view>
 </view>
